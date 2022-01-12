@@ -3,8 +3,6 @@ import {  StyleSheet, Text, View, FlatList, TouchableOpacity } from 'react-nativ
 import { CATEGORIES } from '../data/dummydata';
 import CategoryGridTile from '../components/CategoryGridTile'
 
-
-
 const CategoriesScreen = props => {
     const renderGridItem =(itemData) => {
         return <CategoryGridTile title = {itemData.item.title} color = {itemData.item.color} onSelect = {() => {
@@ -14,8 +12,7 @@ const CategoriesScreen = props => {
         })
         }}/>
     }
-        
-            
+                    
     return  (
         <FlatList 
         // keyExtractor={(item,index) => item.id}   //it is for older version of reactnative
