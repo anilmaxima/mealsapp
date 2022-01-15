@@ -5,10 +5,17 @@ import { useSelector } from 'react-redux';
 
 import MealList from '../components/MealList';
 import { MEALS } from '../data/dummydata';
-import HeaderButton from '../components/HeaderButton'
+import HeaderButton from '../components/HeaderButton';
+import DefaultText from '../components/DefaultText';
 
 const FiltersScreen = props => {
     const favMeals = useSelector(state => state.meals.favoriteMeals)
+
+    if (favMeals.length == 0) {
+        return <View style={styles.content}>
+            <DefaultText>no favorite meal justt try some thing you like</DefaultText>
+        </View>
+    }
     
     return  <MealList listData={favMeals} navigation={props.navigation} />
 }
@@ -28,9 +35,9 @@ FavoritesScreen.navigationOptions = navData => {
 }
 
 const styles = StyleSheet.create({
-    screen: {
+    content: {
         flex: 1,
-        backgroundColor: '#fff',
+        // backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
       }

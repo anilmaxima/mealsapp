@@ -65,9 +65,9 @@ const MealsBottomTabNavigator = createMaterialBottomTabNavigator({
 }
 })
 
-// const FiltersNavigator = createStackNavigator({
-//     Filters:FiltersScreen
-// })
+const FiltersNavigator = createStackNavigator({
+    Filters:FiltersScreen
+})
 
 const MainNavigator = createDrawerNavigator({
     Meals:{
